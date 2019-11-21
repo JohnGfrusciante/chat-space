@@ -7,21 +7,21 @@
 |nickname|string|null: false|
 |email|string|null: false|
 |password|integer|null: false|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :groups through: :groups_users
+- has_many :groups_users
 - has_many :posts
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :users through: :groups_users
+- has_many :groups_users
 - has_many :posts
 
 ## postsテーブル
