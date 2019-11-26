@@ -1,0 +1,108 @@
+$lightBlue:#38aef0;
+
+@mixin heightCenter() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.mainChat {
+  width: calc(100% - 300px);
+  position: fixed;
+  right: 0;
+  &__header {
+    height: 104px;
+    display: flex;
+    position: relative;
+    border-bottom: solid 1px #eeeeee;
+    &__groupName {
+      font-size: 20px;
+      color: #333333;
+      padding: 35px 0 0 40px;
+      &__memberName {
+        font-size: 12px;
+        color: #999999;
+        padding-top: 15px;
+      }
+    }
+    &__editButton {
+      padding: 0 20px;
+      width: 34px;
+      height: 40px;
+      line-height: 40px;
+      color: $lightBlue;
+      border: solid 1px $lightBlue;
+      text-align: center;
+      margin-top: 28px;
+      position: fixed;
+      right: 40px;
+      .editLink {
+        text-decoration: none;
+        color: $lightBlue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__contents {
+    background-color: #fafafa;
+    height: 600px;
+    &__userName {
+      padding: 46px 0 10px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #434a54;
+      display: flex;
+      &__timeStamp {
+        font-size: 12px;
+        color: #999999;
+        font-weight: normal;
+        padding-left: 10px;
+      }
+    }
+    &__message {
+      font-size: 14px;
+      color: 434a54;
+      padding-left: 40px;
+    }
+  }
+  &__form {
+    height: 85px;
+    background-color: #ddd;
+    position: relative;
+    .message {
+      height: 50px;
+      width: 930px;
+      margin: 0 15px 0 40px;
+      padding: 0 10px;
+      @include heightCenter();
+    }
+    .fileField {
+      color: black;
+      @include heightCenter();
+      left: 960px;
+      font-size: 23px;
+    }
+    .fileInput {
+      display: none;
+    }
+    .sendButton {
+      width: 92px;
+      text-align: center;
+      margin: 0 40px 0 15px;
+      color: #fff;
+      height: 50px;
+      line-height: 50px;
+      background-color: $lightBlue;
+      @include heightCenter();
+      right: 0;
+    }
+    .sendInput {
+      display: none;
+    }
+  }
+}

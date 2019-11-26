@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # create-haml-environment
 gem 'haml-rails'
+
+# FontAwesome able to use
+gem 'font-awesome-sass'
