@@ -23,11 +23,11 @@
       最初の投稿です。
   .mainChat__form
     %form
-      %input.message{:placeholder => "type a message", :value => ""}
+      %input.message{placeholder: "type a message", value: ""}
         %label.fileField
           = icon('far', 'image', class: "fileIcon")
-          %input.fileInput{:type => "file", :name => "image", :value => ""}
+          %input.fileInput{type: "file", name: "image", value: ""}
         %label
           %p.sendButton
             Send
-          %input.sendInput{:type => "submit", :value => "send"}
+          %input.sendInput{type: "submit", value: "send"}
