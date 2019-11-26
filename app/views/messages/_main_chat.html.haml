@@ -1,0 +1,33 @@
+.mainChat
+  .mainChat__header
+    .mainChat__header__groupName
+      テストグループ
+      .mainChat__header__groupName__memberName
+        Member：testTaro testJiro
+    .mainChat__header__editButton
+      =link_to '#' , class:"editLink" do
+        %p.editLink
+          Edit
+  .mainChat__contents
+    .mainChat__contents__userName
+      userName
+      .mainChat__contents__userName__timeStamp
+        2019/11/25 10:55:55
+    .mainChat__contents__message
+      ２回目の投稿です。
+    .mainChat__contents__userName
+      userName
+      .mainChat__contents__userName__timeStamp
+        2019/11/25 09:50:33
+    .mainChat__contents__message
+      最初の投稿です。
+  .mainChat__form
+    %form
+      %input.message{placeholder: "type a message", value: ""}
+        %label.fileField
+          = icon('far', 'image', class: "fileIcon")
+          %input.fileInput{type: "file", name: "image", value: ""}
+        %label
+          %p.sendButton
+            Send
+          %input.sendInput{type: "submit", value: "send"}
