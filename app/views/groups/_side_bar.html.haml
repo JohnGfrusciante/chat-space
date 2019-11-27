@@ -12,7 +12,7 @@
   
   - current_user.groups.each do |group|
     .sideBar__contents
-      =link_to '#' , class:"contentsLink" do
+      =link_to group_messages_path(group) , class:"contentsLink" do
         .sideBar__contents__groupName
           = group.name
         .sideBar__contents__lastMessage
