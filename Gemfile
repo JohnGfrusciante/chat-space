@@ -60,3 +60,7 @@ gem 'font-awesome-sass'
 
 # devise install
 gem 'devise'
+
+# Carrierwave Introduce
+gem 'carrierwave'
+gem 'mini_magick'

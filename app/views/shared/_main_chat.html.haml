@@ -22,12 +22,9 @@
     .mainChat__contents__message
       最初の投稿です。
   .mainChat__form
-    %form
-      %input.message{placeholder: "type a message", value: ""}
-        %label.fileField
-          = icon('far', 'image', class: "fileIcon")
-          %input.fileInput{type: "file", name: "image", value: ""}
-        %label
-          %p.sendButton
-            Send
-          %input.sendInput{type: "submit", value: "send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'message', placeholder: 'type a message'
+      = f.label :image, class: 'fileField' do
+        = icon('far', 'image', class: 'fileIcon')
+        = f.file_field :image, class: 'fileInput'
+      = f.submit 'Send', class: 'sendButton'
