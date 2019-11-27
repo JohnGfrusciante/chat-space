@@ -1,0 +1,19 @@
+.sideBar
+  .sideBar__header
+    .sideBar__header__userName
+      = current_user.name
+    .sideBar__header__icon
+      =link_to new_group_path do
+        = icon('fas', 'edit',  class: "sideBar__header__icon")
+        %span<>
+      =link_to edit_user_path(current_user) do
+        = icon('fas', 'cog', class: "sideBar__header__icon")
+        %span<>
+  
+  - current_user.groups.each do |group|
+    .sideBar__contents
+      =link_to '#' , class:"contentsLink" do
+        .sideBar__contents__groupName
+          = group.name
+        .sideBar__contents__lastMessage
+          メッセージはまだありません。
