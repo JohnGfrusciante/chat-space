@@ -8,19 +8,10 @@
       =link_to '#' , class:"editLink" do
         %p.editLink
           Edit
+  
   .mainChat__contents
-    .mainChat__contents__userName
-      userName
-      .mainChat__contents__userName__timeStamp
-        2019/11/25 10:55:55
-    .mainChat__contents__message
-      ２回目の投稿です。
-    .mainChat__contents__userName
-      userName
-      .mainChat__contents__userName__timeStamp
-        2019/11/25 09:50:33
-    .mainChat__contents__message
-      最初の投稿です。
+    = render partial: 'shared/message', collection: @messages
+
   .mainChat__form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'message', placeholder: 'type a message'
