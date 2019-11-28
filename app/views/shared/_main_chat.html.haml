@@ -6,7 +6,7 @@
         - @users.each do |user|
           = user.name
     .mainChat__header__editButton
-      =link_to '#' , class:"editLink" do
+      =link_to edit_group_path(@group) , class:"editLink" do
         %p.editLink
           Edit
   
