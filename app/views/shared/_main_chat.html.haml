@@ -1,9 +1,10 @@
 .mainChat
   .mainChat__header
     .mainChat__header__groupName
-      テストグループ
+      = @group.name
       .mainChat__header__groupName__memberName
-        Member：testTaro testJiro
+        - @users.each do |user|
+          = user.name
     .mainChat__header__editButton
       =link_to '#' , class:"editLink" do
         %p.editLink
