@@ -51,6 +51,7 @@ $lightBlue:#38aef0;
   &__contents {
     background-color: #fafafa;
     height: 600px;
+    overflow: scroll;
     &__userName {
       padding: 46px 0 10px 40px;
       font-size: 16px;
