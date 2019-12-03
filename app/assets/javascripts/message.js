@@ -2,20 +2,12 @@ $(function(){
 
   function buildHTML(message){
 
-    if (message.image) {
-      var html = `<div class="mainChat__contents__userName">
-                    ${message.user}
-                    <div class="mainChat__contents__userName__timeStamp">
-                      ${message.created_at}
-                    </div>
-                  </div>
-                  <div class="mainChat__contents__message">
-                    <p>
-                      ${message.content}
-                    </p>
-                      <img class="" src="${message.image}" alt="Mvc">
-                  </div>`
+    if(message.image){
+      var image = `<img class="" src="${message.image}" alt="Mvc">`
     } else {
+      var image = ""
+    }
+
       var html = `<div class="mainChat__contents__userName">
                     ${message.user}
                     <div class="mainChat__contents__userName__timeStamp">
@@ -26,8 +18,8 @@ $(function(){
                     <p>
                       ${message.content}
                     </p>
+                      ${image}
                   </div>`
-    }
     return html
   }
 
@@ -38,7 +30,7 @@ $(function(){
     $.ajax({
       url: url,
       type: 'POST',
-      data: fromData,  
+      data: fromData,
       dataType: 'json',
       processData: false,
       contentType: false
