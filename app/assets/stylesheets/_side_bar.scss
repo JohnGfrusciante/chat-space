@@ -1,8 +1,9 @@
 .sideBar {
   width: 300px;
-  height: 700px;
+  height: 100%;
   color: #fff;
   position: fixed;
+  background-color: #2f3e51;
   &__header {
     background-color: #253141;
     padding: 40px 20px;
@@ -19,13 +20,12 @@
     }
   }
   &__contents {
+    background-color: #2f3e51;
+    padding: 0 20px 20px 20px;
     .contentsLink {
       color: #fff;
       text-decoration: none;
     }
-    background-color: #2f3e51;
-    padding: 0 20px 20px 20px;
-    height: 100%;
     &__groupName {
       padding-top: 20px;
       font-size: 15px;
