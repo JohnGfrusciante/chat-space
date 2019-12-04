@@ -8,17 +8,19 @@ $(function(){
       var image = ""
     }
 
-      var html = `<div class="mainChat__contents__userName">
-                    ${message.user}
-                    <div class="mainChat__contents__userName__timeStamp">
-                      ${message.created_at}
+      var html = `<div class="mainChat__contents__post" data-messege_id="${message.id}">
+                    <div class="mainChat__contents__post__userName">
+                      ${message.user}
+                      <div class="mainChat__contents__post__userName__timeStamp">
+                        ${message.created_at}
+                      </div>
                     </div>
-                  </div>
-                  <div class="mainChat__contents__message">
-                    <p>
-                      ${message.content}
-                    </p>
-                      ${image}
+                    <div class="mainChat__contents__post__message">
+                      <p>
+                        ${message.content}
+                      </p>
+                        ${image}
+                    </div>
                   </div>`
     return html
   }
@@ -46,4 +48,29 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     })
   })
+
+  var reloadMessages = function() {
+    last_message_id = $('.mainChat__contents__post:last').data("messege_id");
+    $.ajax({
+      url: 'api/messages',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.mainChat__contents').append(insertHTML);
+      $('.mainChat__contents').animate({ scrollTop: $('.mainChat__contents')[0].scrollHeight});
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
+
+  if(document.URL.match("/messages")) {
+		setInterval(reloadMessages, 7000);
+	}
 })
