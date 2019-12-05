@@ -50,8 +50,9 @@ $lightBlue:#38aef0;
   }
   &__contents {
     background-color: #fafafa;
-    height: 600px;
+    height: 560px;
     overflow: scroll;
+    padding-bottom: 40px;
     &__post {
       height: auto;
       &__userName {
