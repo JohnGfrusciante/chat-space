@@ -19,22 +19,26 @@
       font-size: 14px;
     }
   }
-  &__contents {
-    background-color: #2f3e51;
-    padding: 0 20px 20px 20px;
-    .contentsLink {
-      color: #fff;
-      text-decoration: none;
-    }
-    &__groupName {
-      padding-top: 20px;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    &__lastMessage {
-      padding-bottom: 20px;
-      font-size: 11px;
-      font-weight: bold;
+  &__list {
+    padding: 20px 20px 0 20px;
+    overflow: scroll;
+    height: calc(100vh - 120px);
+    &__contents {
+      background-color: #2f3e51;
+      .contentsLink {
+        color: #fff;
+        text-decoration: none;
+      }
+      &__groupName {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      &__lastMessage {
+        padding-bottom: 40px;
+        font-size: 11px;
+        font-weight: bold;
+      }
     }
   }
 }
