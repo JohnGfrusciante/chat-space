@@ -2,6 +2,8 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
+    user = User.find(current_user.id)
+    @groups = user.groups.order("created_at DESC")
   end
 
   def new

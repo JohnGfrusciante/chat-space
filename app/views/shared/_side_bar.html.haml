@@ -11,7 +11,7 @@
         %span<>
 
   .sideBar__list
-    - current_user.groups.each do |group|
+    - @groups.each do |group|
       .sideBar__list__contents
         =link_to group_messages_path(group) , class:"contentsLink" do
           .sideBar__list__contents__groupName
